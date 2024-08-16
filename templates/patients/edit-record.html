@@ -1,0 +1,137 @@
+{% load crispy_forms_tags %}
+
+<form method="POST" action="" novalidate>
+    {% csrf_token %}
+
+    <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Record</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+
+    <div class="modal-body p-3">
+
+
+        <div class="row pb-3">
+            <div class='col-3'>
+                {{form.date | as_crispy_field}}
+            </div>
+            <div class='col-4'>
+                {{form.first_name | as_crispy_field}}
+            </div>
+            <div class='col-1'>
+                {{form.middle_initial | as_crispy_field}}
+            </div>
+            <div class='col-4'>
+                {{form.last_name | as_crispy_field}}
+            </div>
+        </div>
+
+        <div class="row pb-3">
+            <div class="col-2">
+                {{form.hospital | as_crispy_field}}
+            </div>
+            <div class="col-2">
+                {{form.age | as_crispy_field}}
+            </div>
+            <div class="col-2">
+                {{form.sex | as_crispy_field}}
+            </div>
+            <div class="col-2">
+                {{form.unit_before | as_crispy_field}}
+            </div>
+            <div class="col-2">
+                {{form.category | as_crispy_field}}
+            </div>
+            <div class="col-2">
+                {{form.swab | as_crispy_field}}
+            </div>
+        </div>
+
+        <div class="row pb-3">
+            <div class="col-3">
+                {{form.pathway | as_crispy_field}}
+            </div>
+            <div class="col-3">
+                {{form.is_emergency | as_crispy_field}}
+            </div>
+            <div class='col-3'>
+                {{form.schedule_time_from | as_crispy_field}}
+            </div>
+            <div class='col-3'>
+                {{form.schedule_time_to | as_crispy_field}}
+            </div>
+        </div>
+
+        <div class="row pb-3">
+
+            <div class="col-3">
+                {{form.received | as_crispy_field}}
+            </div>
+            <div class="col-3">
+                {{form.started | as_crispy_field}}
+            </div>
+            <div class="col-3">
+                {{form.er_door | as_crispy_field}}
+            </div>
+            <div class="col-3">
+                {{form.acti | as_crispy_field}}
+            </div>
+        </div>
+
+        <div class="row pb-3">
+            <div class="col-3">
+                {{form.wiring | as_crispy_field}}
+            </div>
+            <div class="col-3">
+                {{form.balloon | as_crispy_field}}
+            </div>
+            <div class="col-3">
+                {{form.dx | as_crispy_field}}
+            </div>
+            <div class="col-3">
+                {{form.procedure | as_crispy_field}}
+            </div>
+        </div>
+
+        <div class="row pb-3">
+            <div class="col-4">
+                {{form.angiographer | as_crispy_field}}
+            </div>
+            <div class="col-4">
+                {{form.anesthesiologist | as_crispy_field}}
+            </div>
+            <div class="col-4">
+                {{form.nurse | as_crispy_field}}
+            </div>
+        </div>
+
+        <div class="row pb-3">
+            <div class="col-3">
+                {{form.ended | as_crispy_field}}
+            </div>
+            <div class="col-3">
+                {{form.endorsed | as_crispy_field}}
+            </div>
+            <div class="col-3">
+                {{form.unit_after | as_crispy_field}}
+            </div>
+            <div class="col-3">
+                {{form.tpi | as_crispy_field}}
+            </div>
+        </div>
+
+        <div class="row pb-3">
+            <div class="col">
+                {{form.remarks | as_crispy_field}}
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="Submit" class="btn btn-danger">Save changes</button>
+        {% comment %} <button type="button" class="btn btn-danger" href="{% url 'removeRecord' record.id %}">Save changes</button> {% endcomment %}
+    </div>
+
+</form>
+
